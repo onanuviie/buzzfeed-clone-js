@@ -154,7 +154,7 @@ const questions = [
     },
     {
         id: 5,
-        text: "Pick a weding dress:",
+        text: "Pick a wedding dress:",
         answers: [
             {
                 text: "Classy",
