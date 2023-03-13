@@ -147,7 +147,7 @@ const questions = [
             {
                 text: "Carnival Date",
                 image: "https://images.unsplash.com/photo-1648484284451-b0977b477a4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
-                alt: "Photo of a cople at a carnival",
+                alt: "Photo of a couple at a carnival",
                 credit: "Maria Oswalt" 
             }
         ]
@@ -171,7 +171,7 @@ const questions = [
             {
                 text: "Princessy",
                 image: "https://images.unsplash.com/photo-1562275211-9543b6c6f703?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-                alt: "Photo of iPhone 14 Pro Max",
+                alt: "Photo of Wedding Dress",
                 credit: "Johnathan Borba" 
             },
             {
@@ -430,6 +430,8 @@ const showAnswer = () => {
     const allAnswerBlocks = document.querySelectorAll('.answer-block')
     Array.from(allAnswerBlocks).forEach(answerBlock => 
         answerBlock.replaceWith(answerBlock.cloneNode(true)))
+
+    showGame(output)
 }
 
 const disableQuestionBlock = (questionId, chosenAnswer) => {
@@ -441,4 +443,41 @@ const disableQuestionBlock = (questionId, chosenAnswer) => {
             block.style.opacity = "50%"
         }
     })
+}
+
+const showGame = (output) => {
+    const gameBox = document.createElement('div')
+    gameBox.classList.add('game-box')
+
+    const gameName = document.createElement('p')
+
+    const gameLink = document.createElement('a')
+
+    gameBox.append(gameName)
+    answerDisplay.append(gameBox)
+
+    if (output.text === "Blueberry Icecream") {
+        gameName.textContent = "Your game is Wordle"
+
+        gameLink.textContent = "Click here"
+        gameLink.setAttribute("href", "https://onanuviie.github.io/Wordle-Clone/")
+        gameBox.append(gameLink)
+    }
+
+    else if (output.text === "Vanilla Icecream") {
+        gameName.textContent = "Your game is Word Association"
+
+        gameLink.textContent = "Click here"
+        gameLink.setAttribute("href", "https://onanuviie.github.io/word-association-game/")
+        gameBox.append(gameLink)
+    }
+
+    else {
+        gameName.textContent = "Your game is Tic Tac Toe"
+
+        gameLink.textContent = "Click here"
+        gameLink.setAttribute("href", "https://onanuviie.github.io/tic-tac-toe/")
+        gameBox.append(gameLink)
+    }
+    
 }
