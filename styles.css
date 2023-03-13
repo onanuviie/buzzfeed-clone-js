@@ -97,6 +97,15 @@ p {
     border-radius: 7px;
 }
 
+.game-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
 @media screen and (max-width: 425px) {
     section {
         width: 280px;

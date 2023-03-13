@@ -432,6 +432,7 @@ const showAnswer = () => {
         answerBlock.replaceWith(answerBlock.cloneNode(true)))
 
     showGame(output)
+    location.href = '#game'
 }
 
 const disableQuestionBlock = (questionId, chosenAnswer) => {
@@ -448,6 +449,7 @@ const disableQuestionBlock = (questionId, chosenAnswer) => {
 const showGame = (output) => {
     const gameBox = document.createElement('div')
     gameBox.classList.add('game-box')
+    gameBox.id = 'game'
 
     const gameName = document.createElement('p')
 
